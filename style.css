@@ -10,22 +10,65 @@ html, body {
 body {
     background-color: rgb(22, 21, 21);
     font-family: 'Karla', sans-serif;
-    font-size: 16px;
     line-height: 2em;
 }
 
-
 .container {
     display: grid;
-    width: 375px;
+    grid-template-areas: 
+    "community community"
+    "subscription why-us";
+    width: 60%;
+    font-size: 1.1vw;
+    margin: 10% auto 10% auto;
 }
+
+
+@media screen and (max-width: 550px) {
+    .container {
+        display: grid;
+        font-size: 4.5vw;
+        width: 100%;
+        grid-template-areas: 
+        "community"
+        "subscription"
+        "why-us";
+        /*width: 375px;*/
+    }
+}
+
+@media screen and (min-width: 550px) {
+    .container {
+        font-size: 3vw;     
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .container {
+        font-size: 2.1vw;    
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .container {
+        font-size: 2vw;    
+    }
+}
+
+
+
+
+
 .container > div {
     padding: 8% 7% 8% 7%;
 }
-.container h2,h3 {
-    margin-bottom: 7%;
+.container h2, h3 {
+    margin-bottom: 1%;
 }
+
 .container-community {
+    grid-area: community;
     color: var(--container-text-blue);
     background-color: white;
 }
@@ -34,15 +77,16 @@ body {
 }
 .container-community > h3 {
     color: var(--container-text-yellow);
+    margin-top: 5%;
 }
 .container-subscription {
+    grid-area: subscription;
     color:  var(--container-text-gray);
     background-color: var(--container-text-cyan);
 }
 
 .container-subscription > h3 {
     margin-top: 7%;
-    margin-bottom: 1%;
     font-weight: 700;
 }
 .container-subscription span {
@@ -68,8 +112,13 @@ body {
 }
 
 .container-why-us {
+    grid-area: why-us;
     color:white;
     background-color: hsl(179, 62%, 53%);
     color: var(--container-text-gray);
+}
+
+.container-why-us > h2 {
+    margin-bottom: 10%;
 }
 
